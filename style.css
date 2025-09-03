@@ -1,0 +1,46 @@
+body{
+  margin:0;
+  font-family:"Inter",sans-serif;
+  background:#000;
+  color:#fff;
+  overflow:hidden;
+}
+.topbar{
+  width:100%;
+  padding:14px 24px;
+  background:rgba(0,0,0,0.6);
+  position:fixed;top:0;left:0;
+  z-index:10;
+}
+.logo{font-weight:700;color:#ff001e;font-family:"Orbitron",sans-serif;}
+.glow{color:#ff001e;text-shadow:0 0 10px #ff001e,0 0 20px #ff001e;}
+.hero{padding-top:80px;display:flex;justify-content:center;align-items:center;}
+.big-square{width:100%;max-width:760px;height:580px;background:rgba(255,0,30,0.05);border:1px solid rgba(255,255,255,0.05);border-radius:14px;padding:18px;display:flex;flex-direction:column;}
+.chat-box{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:12px;}
+.msg{padding:10px 14px;border-radius:12px;max-width:75%;font-size:15px;line-height:1.4;}
+.msg.user{align-self:flex-end;background:rgba(255,0,30,0.2);}
+.msg.ai{align-self:flex-start;background:rgba(255,255,255,0.1);}
+.input-area{display:flex;gap:10px;margin-top:10px;}
+.text-area{flex:1;padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:#fff;font-size:16px;height:60px;}
+.btn{padding:0 18px;border:none;border-radius:10px;background:#ff001e;color:#fff;font-weight:700;cursor:pointer;}
+.upload-btn{display:flex;align-items:center;justify-content:center;font-size:20px;}
+.preview{max-width:120px;border-radius:8px;margin:5px;}
+footer{text-align:center;padding:10px;color:#888;font-size:14px;}
+canvas#particles{position:fixed;top:0;left:0;z-index:-1;}
+
+/* === AI typing animation === */
+.msg.ai.typing {
+  font-style: italic;
+  opacity: 0.7;
+  position: relative;
+}
+.msg.ai.typing::after {
+  content: "...";
+  animation: dots 1s steps(3, end) infinite;
+}
+@keyframes dots {
+  0% { content: ""; }
+  33% { content: "."; }
+  66% { content: ".."; }
+  100% { content: "..."; }
+}
